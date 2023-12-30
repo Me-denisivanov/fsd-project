@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   // overrides: [
@@ -27,7 +28,7 @@ module.exports = {
   rules: {
     indent: [2, 2],
     'react/jsx-indent': [2, 2],
-    'max-len': ['error', { code: 120 }],
+    'max-len': ['error', { code: 140 }],
     'react/jsx-indent-props': [2, { indentMode: 2, ignoreTernaryOperator: true }],
     'react/jsx-filename-extension': [2, { extensions: ['js', 'jsx', 'ts', 'tsx'] }],
     'import/no-unresolved': 'off',
