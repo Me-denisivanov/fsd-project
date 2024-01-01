@@ -4,18 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
-  // overrides: [
-  //   {
-  //     env: {
-  //       node: true,
-  //     },
-  //     files: [".eslintrc.{js,cjs}"],
-  //     parserOptions: {
-  //       sourceType: "script",
-  //     },
-  //   },
-  // ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
