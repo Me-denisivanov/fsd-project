@@ -16,29 +16,17 @@ export default {
 
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
+  globals: {
+    __IS_DEV__: true,
+  },
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-  ],
-  moduleDirectories: [
-    'node_modules',
-  ],
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node',
-  ],
-  roots: [
-    '<rootDir>',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  moduleDirectories: ['node_modules'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  roots: ['<rootDir>'],
   modulePaths: ['<rootDir>/src'],
   rootDir: '../../',
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
@@ -84,9 +72,6 @@ export default {
 
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
-
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
 
   // The maximum amount of workers used to run your  10% of y maximum of 2 workers.
   // maxWorkers: "50%",
