@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Денис",
+    "lastname": "Тест",
+    "age": 22,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://icon-library.com/images/user-icon-jpg/user-icon-jpg-8.jpg"
+  }
+}
