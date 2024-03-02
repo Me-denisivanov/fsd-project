@@ -22,7 +22,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'object-curly-newline': 'off',
-    'max-len': ['error', { code: 140 }],
+    'max-len': ['error', { code: 170 }],
     'react/jsx-indent-props': [2, { indentMode: 2, ignoreTernaryOperator: true }],
     'react/jsx-filename-extension': [2, { extensions: ['js', 'jsx', 'ts', 'tsx'] }],
     'import/no-unresolved': 'off',
