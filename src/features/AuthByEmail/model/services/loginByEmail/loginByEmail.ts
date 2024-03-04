@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { User, userActions } from 'entities/User';
 import { ACCESS_TOKEN } from 'shared/const/localstorage';
 
@@ -8,22 +8,24 @@ interface LoginByEmailProps {
   password: string;
 }
 
-export const loginByEmail = createAsyncThunk<User, LoginByEmailProps, { rejectValue: string }>(
+export const loginByEmail = createAsyncThunk<User, LoginByEmailProps, ThunkConfig<string>>(
   'login/loginByEmail',
   async (authData, thunkAPI) => {
+    const { extra, dispatch, rejectWithValue } = thunkAPI;
+
     try {
-      const response = await axios.post('http://localhost:1111/api/auth/login', authData);
+      const response = await extra.api.post('/auth/login', authData);
 
       if (!response.data) {
         throw new Error();
       }
 
       localStorage.setItem(ACCESS_TOKEN, response.data.accessToken);
-      thunkAPI.dispatch(userActions.setAuthData(response.data));
+      dispatch(userActions.setAuthData(response.data));
 
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('Вы ввели неверный email или password');
+      return rejectWithValue('Вы ввели неверный email или password');
     }
   },
 );
