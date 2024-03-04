@@ -27,24 +27,6 @@
 .items {
   margin-top: 20px;
   margin-left: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  margin-right: 10px;
-  fill: var(--inverted-primary-color);
-  opacity: 1;
-}
-
-.link {
-  opacity: 1;
 }
 
 .collapsed {
@@ -57,11 +39,5 @@
 
   .lang {
     margin-left: 0;
-  }
-
-  .link {
-    opacity: 0;
-    width: 0;
-    transition: 0.2s opacity;
   }
 }
