@@ -1,7 +1,6 @@
 import { memo, useCallback } from 'react';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button } from 'shared/ui/Button/Button';
@@ -30,8 +29,6 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-
-  const store = useStore() as ReduxStoreWithManager;
 
   const email = useSelector(getLoginEmail);
   const password = useSelector(getLoginPassword);
