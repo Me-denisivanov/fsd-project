@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from 'entities/User';
 import { loginByEmail } from './loginByEmail';
 
 jest.mock('axios');
@@ -15,8 +15,8 @@ describe('loginByEmail.test', () => {
     const thunk = new TestAsyncThunk(loginByEmail);
     const result = await thunk.callThunk({ email: 'test@gmail.com', password: '1234' });
 
-    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
-    expect(thunk.dispatch).toHaveBeenCalledTimes(3);
+    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthUser(true));
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toBe(userValue);

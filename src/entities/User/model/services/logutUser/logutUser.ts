@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
 
 export const logutUser = createAsyncThunk<boolean, void, ThunkConfig<string>>(
-  'login/logutUser',
+  'user/logutUser',
   async (_, thunkAPI) => {
     const { extra, dispatch, rejectWithValue } = thunkAPI;
 

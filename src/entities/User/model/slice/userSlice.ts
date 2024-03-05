@@ -1,17 +1,27 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { User, UserSchema } from '../types/User';
+import { ACCESS_TOKEN } from 'shared/const/localstorage';
+import { UserSchema } from '../types/User';
 
-const initialState: UserSchema = {};
+const initialState: UserSchema = {
+  isAuth: false,
+};
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setAuthData: (state, action: PayloadAction<User>) => {
-      state.authData = action.payload;
+    setAuthUser: (state, action: PayloadAction<boolean>) => {
+      state.isAuth = action.payload;
+    },
+    initAuthUser: (state) => {
+      const accessToken = localStorage.getItem(ACCESS_TOKEN);
+
+      if (accessToken) {
+        state.isAuth = true;
+      }
     },
     logout: (state) => {
-      state.authData = undefined;
+      state.isAuth = false;
     },
   },
 });

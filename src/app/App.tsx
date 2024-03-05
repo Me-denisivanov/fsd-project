@@ -3,21 +3,17 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
-import { fetchUserData } from 'entities/User';
+import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const getUserData = async () => {
-      await dispatch(fetchUserData());
-    };
-
-    getUserData();
+    dispatch(userActions.initAuthUser());
   }, [dispatch]);
 
   return (
