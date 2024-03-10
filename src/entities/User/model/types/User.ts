@@ -7,6 +7,8 @@ export interface User {
   surname?: string;
   username?: string;
   createdAt?: Date;
+
+  accessToken: string;
 }
 
 export interface UserSchema {
