@@ -19,7 +19,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   return (
-    <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])} data-testid="sidebar">
+    <div
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+      data-testid="sidebar"
+    >
       <Button
         data-testid="sidebar-toggle"
         onClick={onToggle}
